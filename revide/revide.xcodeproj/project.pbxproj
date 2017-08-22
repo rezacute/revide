@@ -17,6 +17,12 @@
 		D562B43E1F49C2DA00806D49 /* revideUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D562B43D1F49C2DA00806D49 /* revideUITests.swift */; };
 		D5D139601F4A652000D275B7 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D1395E1F4A652000D275B7 /* Video.swift */; };
 		D5D139611F4A652000D275B7 /* VideoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D1395F1F4A652000D275B7 /* VideoTableView.swift */; };
+		D5D139631F4BBD4000D275B7 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D139621F4BBD4000D275B7 /* RootViewController.swift */; };
+		D5D139651F4BBF5D00D275B7 /* VideoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D139641F4BBF5D00D275B7 /* VideoService.swift */; };
+		D5D139681F4BC66000D275B7 /* Actions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D139671F4BC66000D275B7 /* Actions.swift */; };
+		D5D1396B1F4BC78000D275B7 /* Reducers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D1396A1F4BC78000D275B7 /* Reducers.swift */; };
+		D5D1396E1F4BC7AF00D275B7 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D1396D1F4BC7AF00D275B7 /* AppState.swift */; };
+		D5D139701F4BFC0A00D275B7 /* AppSearchBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5D1396F1F4BFC0A00D275B7 /* AppSearchBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +64,12 @@
 		D562B43F1F49C2DA00806D49 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5D1395E1F4A652000D275B7 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		D5D1395F1F4A652000D275B7 /* VideoTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoTableView.swift; sourceTree = "<group>"; };
+		D5D139621F4BBD4000D275B7 /* RootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		D5D139641F4BBF5D00D275B7 /* VideoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoService.swift; sourceTree = "<group>"; };
+		D5D139671F4BC66000D275B7 /* Actions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Actions.swift; path = Actions/Actions.swift; sourceTree = "<group>"; };
+		D5D1396A1F4BC78000D275B7 /* Reducers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reducers.swift; path = Reducers/Reducers.swift; sourceTree = "<group>"; };
+		D5D1396D1F4BC7AF00D275B7 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppState.swift; path = State/AppState.swift; sourceTree = "<group>"; };
+		D5D1396F1F4BFC0A00D275B7 /* AppSearchBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSearchBarController.swift; sourceTree = "<group>"; };
 		E1619405F358908330D935C8 /* Pods-revideTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-revideTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-revideTests/Pods-revideTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,12 +136,18 @@
 		D562B41C1F49C2DA00806D49 /* revide */ = {
 			isa = PBXGroup;
 			children = (
+				D5D1396C1F4BC78D00D275B7 /* State */,
+				D5D139691F4BC68A00D275B7 /* Reducers */,
+				D5D139661F4BC64100D275B7 /* Actions */,
 				D5D1395E1F4A652000D275B7 /* Video.swift */,
 				D5D1395F1F4A652000D275B7 /* VideoTableView.swift */,
 				D562B41D1F49C2DA00806D49 /* AppDelegate.swift */,
 				D562B4241F49C2DA00806D49 /* Assets.xcassets */,
 				D562B4261F49C2DA00806D49 /* LaunchScreen.storyboard */,
 				D562B4291F49C2DA00806D49 /* Info.plist */,
+				D5D139621F4BBD4000D275B7 /* RootViewController.swift */,
+				D5D139641F4BBF5D00D275B7 /* VideoService.swift */,
+				D5D1396F1F4BFC0A00D275B7 /* AppSearchBarController.swift */,
 			);
 			path = revide;
 			sourceTree = "<group>";
@@ -150,6 +168,30 @@
 				D562B43F1F49C2DA00806D49 /* Info.plist */,
 			);
 			path = revideUITests;
+			sourceTree = "<group>";
+		};
+		D5D139661F4BC64100D275B7 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				D5D139671F4BC66000D275B7 /* Actions.swift */,
+			);
+			name = Actions;
+			sourceTree = "<group>";
+		};
+		D5D139691F4BC68A00D275B7 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				D5D1396A1F4BC78000D275B7 /* Reducers.swift */,
+			);
+			name = Reducers;
+			sourceTree = "<group>";
+		};
+		D5D1396C1F4BC78D00D275B7 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				D5D1396D1F4BC7AF00D275B7 /* AppState.swift */,
+			);
+			name = State;
 			sourceTree = "<group>";
 		};
 		FCC6051B2E85AB23DD14DA09 /* Pods */ = {
@@ -450,7 +492,13 @@
 			files = (
 				D5D139611F4A652000D275B7 /* VideoTableView.swift in Sources */,
 				D562B41E1F49C2DA00806D49 /* AppDelegate.swift in Sources */,
+				D5D139631F4BBD4000D275B7 /* RootViewController.swift in Sources */,
+				D5D1396E1F4BC7AF00D275B7 /* AppState.swift in Sources */,
+				D5D139681F4BC66000D275B7 /* Actions.swift in Sources */,
+				D5D139701F4BFC0A00D275B7 /* AppSearchBarController.swift in Sources */,
 				D5D139601F4A652000D275B7 /* Video.swift in Sources */,
+				D5D139651F4BBF5D00D275B7 /* VideoService.swift in Sources */,
+				D5D1396B1F4BC78000D275B7 /* Reducers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
