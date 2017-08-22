@@ -1,6 +1,7 @@
 import UIKit
 import Material
 import Graph
+import AlamofireImage
 
 class VideoTableView: TableView {
     /**
@@ -39,9 +40,19 @@ extension VideoTableView: TableViewDataSource {
         }
         
         cell.textLabel?.text = video.title
-        
+        let url = URL(string: video.thumbnailURL!)!
+        let placeholderImage = UIImage(named: "thumbnail")!
+        let filter = AspectScaledToFillSizeWithRoundedCornersFilter(
+            size: CGSize(width:50,height:50),
+            radius: 10.0
+        )
         
         cell.dividerColor = Color.grey.lighten3
+        cell.imageView?.af_setImage(
+            withURL: url,
+            placeholderImage: placeholderImage,
+            filter: filter
+        )
         
         return cell
     }
