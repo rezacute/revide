@@ -7,12 +7,17 @@
 //
 
 import ReSwift
+import Graph
 
 // all of the actions that can be applied to the state
-struct RevideActionLoading: Action {}
-struct RevideActionLoaded: Action {
+struct RevideActionLoading: ReSwift.Action {}
+struct RevideActionPlayerOpened: ReSwift.Action {}
+struct RevideActionLoaded: ReSwift.Action {
     let totalVideos : Int
 }
-struct RevideActionSearch: Action {
+struct RevideActionPlayVideo: ReSwift.Action {
+    let videoObj : Entity
+}
+struct RevideActionSearch: ReSwift.Action {
     let keyWord : String
 }

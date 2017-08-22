@@ -56,10 +56,20 @@ extension VideoTableView: TableViewDataSource {
         
         return cell
     }
+
+
 }
 
 extension VideoTableView: TableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let video = dataSourceItems[indexPath.row].data as? Entity else {
+            return
+        }
+
+        mainStore.dispatch(RevideActionPlayVideo(videoObj: video))
+
     }
 }

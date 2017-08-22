@@ -7,8 +7,10 @@
 //
 
 import ReSwift
-
+import Graph
 struct AppState: StateType {
     var videoCounter: Int = 0
     var searchKeyWord: String = ""
+    var stateNavigation: String = "main"
+    var selectedVideo : Entity? = nil
 }

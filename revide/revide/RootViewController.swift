@@ -10,6 +10,7 @@ import UIKit
 import Material
 import Graph
 import ReSwift
+import MobilePlayer
 
 class RootViewController: UIViewController, StoreSubscriber {
     // Model.
@@ -28,11 +29,32 @@ class RootViewController: UIViewController, StoreSubscriber {
     }
 
     func newState(state: AppState) {
-        reloadData()
-        tableView?.reloadData()
+        if let selected = state.selectedVideo {
+            print("selected :",selected.videoURL ?? "")
+            let value = UIInterfaceOrientation.landscapeLeft.rawValue
+            UIDevice.current.setValue(value, forKey: "orientation")
+            let videoURL = URL(string: selected.videoURL!)!
+
+            let playerVC = MobilePlayerViewController(contentURL: videoURL)
+            playerVC.title = "Revide Player - \(selected.title!)"
+            playerVC.activityItems = [videoURL] // Check the documentation for more information.
+            present(playerVC, animated: true, completion: { 
+                mainStore.dispatch(RevideActionPlayerOpened())
+            })
+
+        }else{
+            reloadData()
+            tableView?.reloadData()
+        }
+
+    }
+
+    override var shouldAutorotate: Bool {
+        return true
     }
     
     open override func viewDidLoad() {
+
         super.viewDidLoad()
         view.backgroundColor = Color.grey.lighten5
         
